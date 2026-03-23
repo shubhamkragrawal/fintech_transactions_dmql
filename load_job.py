@@ -2,7 +2,7 @@ import sys
 import traceback
 import awswrangler as wr
 from awsglue.utils import getResolvedOptions
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 args = getResolvedOptions(sys.argv, [
     'TARGET_BASE',
@@ -40,11 +40,16 @@ for cfg in LOAD_CONFIG:
     table        = cfg['table']
     parquet_path = f"{TARGET_BASE.rstrip('/')}/{name}/"
 
-    print(f"\nLoading {name} → etl.{table}")
+    print(f"\nLoading {name} → dmql_base.{table}")
 
     try:
         df = wr.s3.read_parquet(path=parquet_path)
         print(f"  Rows: {len(df)} | Columns: {list(df.columns)}")
+
+        # Truncate first to overwrite safely without dropping table structure
+        with engine.begin() as conn:
+            conn.execute(text(f'TRUNCATE TABLE dmql_base."{table}" CASCADE'))
+            print(f"  Truncated dmql_base.{table}")
 
         df.to_sql(
             name      = table,
@@ -78,5 +83,3 @@ if failed:
     raise Exception(f"Load job finished with failures: {failed}")
 
 print("\nAll 7 tables loaded into RDS successfully.")
-
-
