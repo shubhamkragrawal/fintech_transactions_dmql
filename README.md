@@ -1,6 +1,6 @@
 # Retail Banking Executive Dashboard
 ### EAS 550 — Financial Services & Retail Banking Analytics
-**Team:** Shubham Kumar Agrawal · Rahul Yadav · Kavyansh Tiwari
+**Team 2:** Shubham Kumar Agrawal · Rahul Yadav · Kavyansh Tiwari
 
 ---
 
