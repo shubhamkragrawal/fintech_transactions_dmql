@@ -36,25 +36,20 @@ jobs:
           cp profiles.yml ~/.dbt/profiles.yml
 
       - name: Install dbt packages
-        working-directory: fintech_dbt
         run: dbt deps
 
       - name: Lint SQL with SQLFluff
-        working-directory: fintech_dbt
         run: |
           sqlfluff lint models/ \
             --dialect postgres \
             --templater dbt \
-            --config ../.sqlfluff
+            --config .sqlfluff
 
       - name: Run dbt models
-        working-directory: fintech_dbt
         run: dbt run --target dev
 
       - name: Run dbt tests
-        working-directory: fintech_dbt
         run: dbt test --target dev
 
       - name: Generate dbt docs
-        working-directory: fintech_dbt
         run: dbt docs generate
