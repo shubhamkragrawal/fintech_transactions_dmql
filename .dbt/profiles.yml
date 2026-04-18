@@ -1,0 +1,13 @@
+fintech_transactions_dmql:
+  outputs:
+    dev:
+      dbname: ${{ secrets.DB_NAME }}
+      host: ${{ secrets.DB_HOST }}
+      pass: ${{ secrets.DBT_PASSWORD }}
+      port: 5432
+      schema: dmql_base
+      threads: 4
+      type: postgres
+      user: ${{ secrets.DB_USER }}
+  target: dev
+
