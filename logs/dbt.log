@@ -1,0 +1,662 @@
+[0m18:49:10.999400 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a08bdf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b117850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b117b80>]}
+
+
+============================== 18:49:11.003965 | a1391750-9a15-4470-8449-035cf247707a ==============================
+[0m18:49:11.003965 [info ] [MainThread]: Running with dbt=1.10.20
+[0m18:49:11.004366 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'target_path': 'None', 'empty': 'None', 'profiles_dir': '/Users/shubhamagrawal/.dbt', 'write_json': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'log_format': 'default', 'quiet': 'False', 'cache_selected_only': 'False', 'static_parser': 'True', 'introspect': 'True', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'debug': 'False', 'warn_error': 'None', 'invocation_command': 'dbt init fintech_transactions_dmql', 'partial_parse': 'True', 'no_print': 'None', 'printer_width': '80'}
+[0m18:49:11.014717 [info ] [MainThread]: Creating dbt configuration folder at /Users/shubhamagrawal/.dbt
+[0m18:49:11.015823 [debug] [MainThread]: Starter project path: /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/lib/python3.9/site-packages/dbt/include/starter_project
+[0m18:49:11.020103 [info ] [MainThread]: 
+Your new dbt project "fintech_transactions_dmql" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:49:11.020484 [info ] [MainThread]: Setting up your profile.
+[0m18:54:38.893436 [info ] [MainThread]: Profile fintech_transactions_dmql written to /Users/shubhamagrawal/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:54:38.910338 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 327.98056, "process_in_blocks": "0", "process_kernel_time": 0.246612, "process_mem_max_rss": "100712448", "process_out_blocks": "0", "process_user_time": 0.96921}
+[0m18:54:38.911419 [debug] [MainThread]: Command `dbt init` succeeded at 18:54:38.911188 after 327.98 seconds
+[0m18:54:38.912439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a08bdf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1b2c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b1033d0>]}
+[0m18:54:38.913345 [debug] [MainThread]: Flushing usage events
+[0m18:54:39.101330 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:56:43.238018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a1e1dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b270970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b270ca0>]}
+
+
+============================== 18:56:43.240699 | 59047040-3545-4039-ac5c-adc22e584111 ==============================
+[0m18:56:43.240699 [info ] [MainThread]: Running with dbt=1.10.20
+[0m18:56:43.241096 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'profiles_dir': '/Users/shubhamagrawal/.dbt', 'log_path': 'logs', 'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'debug': 'False', 'version_check': 'True', 'log_format': 'default', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'write_json': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'log_cache_events': 'False', 'no_print': 'None', 'empty': 'None', 'printer_width': '80', 'introspect': 'True', 'cache_selected_only': 'False', 'use_colors': 'True', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m18:56:43.249827 [info ] [MainThread]: dbt version: 1.10.20
+[0m18:56:43.250091 [info ] [MainThread]: python version: 3.9.6
+[0m18:56:43.250283 [info ] [MainThread]: python path: /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/bin/python3
+[0m18:56:43.250469 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit
+[0m18:56:43.297335 [info ] [MainThread]: Using profiles dir at /Users/shubhamagrawal/.dbt
+[0m18:56:43.297614 [info ] [MainThread]: Using profiles.yml file at /Users/shubhamagrawal/.dbt/profiles.yml
+[0m18:56:43.297800 [info ] [MainThread]: Using dbt_project.yml file at /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/dbt_project.yml
+[0m18:56:43.298208 [info ] [MainThread]: adapter type: postgres
+[0m18:56:43.298379 [info ] [MainThread]: adapter version: 1.9.1
+[0m18:56:43.298557 [info ] [MainThread]: Configuration:
+[0m18:56:43.298729 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:56:43.298946 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m18:56:43.299161 [info ] [MainThread]: Required dependencies:
+[0m18:56:43.299393 [debug] [MainThread]: Executing "git --help"
+[0m18:56:43.327323 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:56:43.327917 [debug] [MainThread]: STDERR: "b''"
+[0m18:56:43.328163 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:56:43.328393 [info ] [MainThread]: Connection:
+[0m18:56:43.328643 [info ] [MainThread]:   host: etl-postgres.c7i4o6ikqq3x.us-east-2.rds.amazonaws.com
+[0m18:56:43.328816 [info ] [MainThread]:   port: 5432
+[0m18:56:43.328986 [info ] [MainThread]:   user: postgresdmql
+[0m18:56:43.329150 [info ] [MainThread]:   database: postgres
+[0m18:56:43.329313 [info ] [MainThread]:   schema: dmql_base
+[0m18:56:43.329476 [info ] [MainThread]:   connect_timeout: 10
+[0m18:56:43.329642 [info ] [MainThread]:   role: None
+[0m18:56:43.329802 [info ] [MainThread]:   search_path: None
+[0m18:56:43.329964 [info ] [MainThread]:   keepalives_idle: 0
+[0m18:56:43.330126 [info ] [MainThread]:   sslmode: None
+[0m18:56:43.330289 [info ] [MainThread]:   sslcert: None
+[0m18:56:43.330451 [info ] [MainThread]:   sslkey: None
+[0m18:56:43.330611 [info ] [MainThread]:   sslrootcert: None
+[0m18:56:43.330771 [info ] [MainThread]:   application_name: dbt
+[0m18:56:43.330932 [info ] [MainThread]:   retries: 1
+[0m18:56:43.331354 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m18:56:43.419217 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m18:56:43.450246 [debug] [MainThread]: Using postgres connection "debug"
+[0m18:56:43.450498 [debug] [MainThread]: On debug: select 1 as id
+[0m18:56:43.450797 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:56:43.915585 [debug] [MainThread]: SQL status: SELECT 1 in 0.465 seconds
+[0m18:56:43.916528 [debug] [MainThread]: On debug: Close
+[0m18:56:43.918066 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:56:43.918367 [info ] [MainThread]: [31m1 check failed:[0m
+[0m18:56:43.918616 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/dbt_project.yml> not found
+
+[0m18:56:43.921378 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.72853297, "process_in_blocks": "0", "process_kernel_time": 0.212826, "process_mem_max_rss": "122060800", "process_out_blocks": "0", "process_user_time": 0.869298}
+[0m18:56:43.921766 [debug] [MainThread]: Command `dbt debug` failed at 18:56:43.921690 after 0.73 seconds
+[0m18:56:43.922085 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:56:43.922422 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a1e1dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b80fbb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b80f3a0>]}
+[0m18:56:43.922813 [debug] [MainThread]: Flushing usage events
+[0m18:56:44.121893 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:58:19.358678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1085a1d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1096327c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109632ac0>]}
+
+
+============================== 18:58:19.361311 | 7cff63b7-60b1-4397-8d5a-ff1f01194f11 ==============================
+[0m18:58:19.361311 [info ] [MainThread]: Running with dbt=1.10.20
+[0m18:58:19.361680 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'version_check': 'True', 'log_path': '/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/logs', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True', 'use_colors': 'True', 'debug': 'False', 'warn_error': 'None', 'cache_selected_only': 'False', 'empty': 'None', 'profiles_dir': '/Users/shubhamagrawal/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'static_parser': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'introspect': 'True', 'log_cache_events': 'False', 'write_json': 'True', 'quiet': 'False', 'printer_width': '80', 'partial_parse': 'True', 'fail_fast': 'False'}
+[0m18:58:19.370053 [info ] [MainThread]: dbt version: 1.10.20
+[0m18:58:19.370277 [info ] [MainThread]: python version: 3.9.6
+[0m18:58:19.370458 [info ] [MainThread]: python path: /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/bin/python3
+[0m18:58:19.370632 [info ] [MainThread]: os info: macOS-26.1-arm64-arm-64bit
+[0m18:58:19.418360 [info ] [MainThread]: Using profiles dir at /Users/shubhamagrawal/.dbt
+[0m18:58:19.418659 [info ] [MainThread]: Using profiles.yml file at /Users/shubhamagrawal/.dbt/profiles.yml
+[0m18:58:19.418852 [info ] [MainThread]: Using dbt_project.yml file at /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/dbt_project.yml
+[0m18:58:19.419281 [info ] [MainThread]: adapter type: postgres
+[0m18:58:19.419466 [info ] [MainThread]: adapter version: 1.9.1
+[0m18:58:19.480006 [info ] [MainThread]: Configuration:
+[0m18:58:19.480301 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:58:19.480506 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:58:19.480691 [info ] [MainThread]: Required dependencies:
+[0m18:58:19.480927 [debug] [MainThread]: Executing "git --help"
+[0m18:58:19.500389 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:58:19.500965 [debug] [MainThread]: STDERR: "b''"
+[0m18:58:19.501213 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:58:19.501452 [info ] [MainThread]: Connection:
+[0m18:58:19.501708 [info ] [MainThread]:   host: etl-postgres.c7i4o6ikqq3x.us-east-2.rds.amazonaws.com
+[0m18:58:19.501890 [info ] [MainThread]:   port: 5432
+[0m18:58:19.502059 [info ] [MainThread]:   user: postgresdmql
+[0m18:58:19.502225 [info ] [MainThread]:   database: postgres
+[0m18:58:19.502393 [info ] [MainThread]:   schema: dmql_base
+[0m18:58:19.502558 [info ] [MainThread]:   connect_timeout: 10
+[0m18:58:19.502724 [info ] [MainThread]:   role: None
+[0m18:58:19.502890 [info ] [MainThread]:   search_path: None
+[0m18:58:19.503055 [info ] [MainThread]:   keepalives_idle: 0
+[0m18:58:19.503218 [info ] [MainThread]:   sslmode: None
+[0m18:58:19.503534 [info ] [MainThread]:   sslcert: None
+[0m18:58:19.503750 [info ] [MainThread]:   sslkey: None
+[0m18:58:19.503933 [info ] [MainThread]:   sslrootcert: None
+[0m18:58:19.504105 [info ] [MainThread]:   application_name: dbt
+[0m18:58:19.504276 [info ] [MainThread]:   retries: 1
+[0m18:58:19.504706 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m18:58:19.591718 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m18:58:19.621059 [debug] [MainThread]: Using postgres connection "debug"
+[0m18:58:19.621296 [debug] [MainThread]: On debug: select 1 as id
+[0m18:58:19.621473 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:58:20.075160 [debug] [MainThread]: SQL status: SELECT 1 in 0.453 seconds
+[0m18:58:20.078155 [debug] [MainThread]: On debug: Close
+[0m18:58:20.082589 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:58:20.086984 [info ] [MainThread]: [32mAll checks passed![0m
+[0m18:58:20.095352 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 0.7801158, "process_in_blocks": "0", "process_kernel_time": 0.202533, "process_mem_max_rss": "124633088", "process_out_blocks": "0", "process_user_time": 0.940383}
+[0m18:58:20.096947 [debug] [MainThread]: Command `dbt debug` succeeded at 18:58:20.096721 after 0.78 seconds
+[0m18:58:20.097597 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:58:20.098320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1085a1d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109632190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10885cbb0>]}
+[0m18:58:20.099121 [debug] [MainThread]: Flushing usage events
+[0m18:58:20.299740 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:21:14.773657 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb19df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dbb8130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dbb8430>]}
+
+
+============================== 20:21:14.776389 | 1b735aee-b18a-4c55-8d00-2e2c5db8fac2 ==============================
+[0m20:21:14.776389 [info ] [MainThread]: Running with dbt=1.10.20
+[0m20:21:14.776736 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'log_path': '/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/logs', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'use_experimental_parser': 'False', 'introspect': 'True', 'log_format': 'default', 'quiet': 'False', 'version_check': 'True', 'printer_width': '80', 'target_path': 'None', 'invocation_command': 'dbt run', 'use_colors': 'True', 'profiles_dir': '/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dbt', 'static_parser': 'True', 'fail_fast': 'False', 'cache_selected_only': 'False', 'empty': 'False'}
+[0m20:21:14.904068 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10db8d3d0>]}
+[0m20:21:14.938254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d488730>]}
+[0m20:21:14.938893 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m20:21:15.029902 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m20:21:15.030394 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m20:21:15.030638 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e314eb0>]}
+[0m20:21:15.635402 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'fact_transactions' in the 'models' section of file 'models/example/schema.yml'
+[0m20:21:15.636243 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'dim_customer' in the 'models' section of file 'models/example/schema.yml'
+[0m20:21:15.694713 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships`. Arguments to generic tests
+should be nested under the `arguments` property.`
+[0m20:21:15.695044 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eea5d60>]}
+[0m20:21:15.712511 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.fintech_transactions_dmql.unique_fact_transactions_transaction_id.4978e2a484' (models/example/schema.yml) depends on a node named 'fact_transactions' in package '' which was not found
+[0m20:21:15.712837 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.fintech_transactions_dmql.not_null_fact_transactions_transaction_id.e79bae8750' (models/example/schema.yml) depends on a node named 'fact_transactions' in package '' which was not found
+[0m20:21:15.713078 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.fintech_transactions_dmql.not_null_fact_transactions_customer_key.5d744f2fbb' (models/example/schema.yml) depends on a node named 'fact_transactions' in package '' which was not found
+[0m20:21:15.713306 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.fintech_transactions_dmql.relationships_fact_transactions_customer_key__customer_key__ref_dim_customer_.70986017c6' (models/example/schema.yml) depends on a node named 'dim_customer' in package '' which was not found
+[0m20:21:15.713524 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.fintech_transactions_dmql.relationships_fact_transactions_customer_key__customer_key__ref_dim_customer_.70986017c6' (models/example/schema.yml) depends on a node named 'fact_transactions' in package '' which was not found
+[0m20:21:15.713737 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.fintech_transactions_dmql.not_null_fact_transactions_amount.073f4954fa' (models/example/schema.yml) depends on a node named 'fact_transactions' in package '' which was not found
+[0m20:21:15.713960 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.fintech_transactions_dmql.unique_dim_customer_customer_key.7b0683cc6e' (models/example/schema.yml) depends on a node named 'dim_customer' in package '' which was not found
+[0m20:21:15.714205 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.fintech_transactions_dmql.not_null_dim_customer_customer_key.c289fe4d1f' (models/example/schema.yml) depends on a node named 'dim_customer' in package '' which was not found
+[0m20:21:15.766701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef17eb0>]}
+[0m20:21:15.818370 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/manifest.json
+[0m20:21:15.819814 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/semantic_manifest.json
+[0m20:21:15.830771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef171f0>]}
+[0m20:21:15.831068 [info ] [MainThread]: Found 2 models, 447 macros
+[0m20:21:15.831270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ef41130>]}
+[0m20:21:15.832047 [info ] [MainThread]: 
+[0m20:21:15.832259 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:21:15.832438 [info ] [MainThread]: 
+[0m20:21:15.832722 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:21:15.835424 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m20:21:15.873379 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m20:21:15.873640 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:21:15.873821 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:21:16.359900 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.486 seconds
+[0m20:21:16.362251 [debug] [ThreadPool]: On list_postgres: Close
+[0m20:21:16.364605 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres, now list_postgres_dmql_base)
+[0m20:21:16.374893 [debug] [ThreadPool]: Using postgres connection "list_postgres_dmql_base"
+[0m20:21:16.375221 [debug] [ThreadPool]: On list_postgres_dmql_base: BEGIN
+[0m20:21:16.375431 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:21:16.712936 [debug] [ThreadPool]: SQL status: BEGIN in 0.337 seconds
+[0m20:21:16.714043 [debug] [ThreadPool]: Using postgres connection "list_postgres_dmql_base"
+[0m20:21:16.714901 [debug] [ThreadPool]: On list_postgres_dmql_base: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "connection_name": "list_postgres_dmql_base"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dmql_base'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dmql_base'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dmql_base'
+  
+[0m20:21:16.754943 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.039 seconds
+[0m20:21:16.759332 [debug] [ThreadPool]: On list_postgres_dmql_base: ROLLBACK
+[0m20:21:16.790278 [debug] [ThreadPool]: On list_postgres_dmql_base: Close
+[0m20:21:16.803829 [debug] [MainThread]: Using postgres connection "master"
+[0m20:21:16.804671 [debug] [MainThread]: On master: BEGIN
+[0m20:21:16.805196 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:21:17.113785 [debug] [MainThread]: SQL status: BEGIN in 0.308 seconds
+[0m20:21:17.115787 [debug] [MainThread]: Using postgres connection "master"
+[0m20:21:17.118602 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m20:21:17.183426 [debug] [MainThread]: SQL status: SELECT 0 in 0.049 seconds
+[0m20:21:17.187386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10eeea610>]}
+[0m20:21:17.188610 [debug] [MainThread]: On master: ROLLBACK
+[0m20:21:17.220010 [debug] [MainThread]: Using postgres connection "master"
+[0m20:21:17.222029 [debug] [MainThread]: On master: BEGIN
+[0m20:21:17.284794 [debug] [MainThread]: SQL status: BEGIN in 0.062 seconds
+[0m20:21:17.286105 [debug] [MainThread]: On master: COMMIT
+[0m20:21:17.286822 [debug] [MainThread]: Using postgres connection "master"
+[0m20:21:17.287298 [debug] [MainThread]: On master: COMMIT
+[0m20:21:17.318715 [debug] [MainThread]: SQL status: COMMIT in 0.030 seconds
+[0m20:21:17.320554 [debug] [MainThread]: On master: Close
+[0m20:21:17.327488 [debug] [Thread-1  ]: Began running node model.fintech_transactions_dmql.my_first_dbt_model
+[0m20:21:17.328899 [info ] [Thread-1  ]: 1 of 2 START sql table model dmql_base.my_first_dbt_model ...................... [RUN]
+[0m20:21:17.329799 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_postgres_dmql_base, now model.fintech_transactions_dmql.my_first_dbt_model)
+[0m20:21:17.330377 [debug] [Thread-1  ]: Began compiling node model.fintech_transactions_dmql.my_first_dbt_model
+[0m20:21:17.379513 [debug] [Thread-1  ]: Writing injected SQL for node "model.fintech_transactions_dmql.my_first_dbt_model"
+[0m20:21:17.380595 [debug] [Thread-1  ]: Began executing node model.fintech_transactions_dmql.my_first_dbt_model
+[0m20:21:17.407673 [debug] [Thread-1  ]: Writing runtime sql for node "model.fintech_transactions_dmql.my_first_dbt_model"
+[0m20:21:17.408455 [debug] [Thread-1  ]: Using postgres connection "model.fintech_transactions_dmql.my_first_dbt_model"
+[0m20:21:17.408694 [debug] [Thread-1  ]: On model.fintech_transactions_dmql.my_first_dbt_model: BEGIN
+[0m20:21:17.408900 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m20:21:17.704866 [debug] [Thread-1  ]: SQL status: BEGIN in 0.295 seconds
+[0m20:21:17.707047 [debug] [Thread-1  ]: Using postgres connection "model.fintech_transactions_dmql.my_first_dbt_model"
+[0m20:21:17.707971 [debug] [Thread-1  ]: On model.fintech_transactions_dmql.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "node_id": "model.fintech_transactions_dmql.my_first_dbt_model"} */
+
+  
+    
+
+  create  table "postgres"."dmql_base"."my_first_dbt_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    /*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+  );
+  
+[0m20:21:17.751146 [debug] [Thread-1  ]: SQL status: SELECT 2 in 0.042 seconds
+[0m20:21:17.768892 [debug] [Thread-1  ]: Using postgres connection "model.fintech_transactions_dmql.my_first_dbt_model"
+[0m20:21:17.769339 [debug] [Thread-1  ]: On model.fintech_transactions_dmql.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "node_id": "model.fintech_transactions_dmql.my_first_dbt_model"} */
+alter table "postgres"."dmql_base"."my_first_dbt_model__dbt_tmp" rename to "my_first_dbt_model"
+[0m20:21:17.799631 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.030 seconds
+[0m20:21:17.816261 [debug] [Thread-1  ]: On model.fintech_transactions_dmql.my_first_dbt_model: COMMIT
+[0m20:21:17.816587 [debug] [Thread-1  ]: Using postgres connection "model.fintech_transactions_dmql.my_first_dbt_model"
+[0m20:21:17.816855 [debug] [Thread-1  ]: On model.fintech_transactions_dmql.my_first_dbt_model: COMMIT
+[0m20:21:17.848371 [debug] [Thread-1  ]: SQL status: COMMIT in 0.031 seconds
+[0m20:21:17.856365 [debug] [Thread-1  ]: Applying DROP to: "postgres"."dmql_base"."my_first_dbt_model__dbt_backup"
+[0m20:21:17.860577 [debug] [Thread-1  ]: Using postgres connection "model.fintech_transactions_dmql.my_first_dbt_model"
+[0m20:21:17.861028 [debug] [Thread-1  ]: On model.fintech_transactions_dmql.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "node_id": "model.fintech_transactions_dmql.my_first_dbt_model"} */
+drop table if exists "postgres"."dmql_base"."my_first_dbt_model__dbt_backup" cascade
+[0m20:21:17.891203 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.030 seconds
+[0m20:21:17.893603 [debug] [Thread-1  ]: On model.fintech_transactions_dmql.my_first_dbt_model: Close
+[0m20:21:17.896842 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f3b8e20>]}
+[0m20:21:17.897737 [info ] [Thread-1  ]: 1 of 2 OK created sql table model dmql_base.my_first_dbt_model ................. [[32mSELECT 2[0m in 0.56s]
+[0m20:21:17.898465 [debug] [Thread-1  ]: Finished running node model.fintech_transactions_dmql.my_first_dbt_model
+[0m20:21:17.899096 [debug] [Thread-3  ]: Began running node model.fintech_transactions_dmql.my_second_dbt_model
+[0m20:21:17.899643 [info ] [Thread-3  ]: 2 of 2 START sql view model dmql_base.my_second_dbt_model ...................... [RUN]
+[0m20:21:17.900291 [debug] [Thread-3  ]: Acquiring new postgres connection 'model.fintech_transactions_dmql.my_second_dbt_model'
+[0m20:21:17.900704 [debug] [Thread-3  ]: Began compiling node model.fintech_transactions_dmql.my_second_dbt_model
+[0m20:21:17.903948 [debug] [Thread-3  ]: Writing injected SQL for node "model.fintech_transactions_dmql.my_second_dbt_model"
+[0m20:21:17.904668 [debug] [Thread-3  ]: Began executing node model.fintech_transactions_dmql.my_second_dbt_model
+[0m20:21:17.923062 [debug] [Thread-3  ]: Writing runtime sql for node "model.fintech_transactions_dmql.my_second_dbt_model"
+[0m20:21:17.923902 [debug] [Thread-3  ]: Using postgres connection "model.fintech_transactions_dmql.my_second_dbt_model"
+[0m20:21:17.924215 [debug] [Thread-3  ]: On model.fintech_transactions_dmql.my_second_dbt_model: BEGIN
+[0m20:21:17.924493 [debug] [Thread-3  ]: Opening a new connection, currently in state init
+[0m20:21:18.227846 [debug] [Thread-3  ]: SQL status: BEGIN in 0.303 seconds
+[0m20:21:18.228564 [debug] [Thread-3  ]: Using postgres connection "model.fintech_transactions_dmql.my_second_dbt_model"
+[0m20:21:18.229194 [debug] [Thread-3  ]: On model.fintech_transactions_dmql.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "node_id": "model.fintech_transactions_dmql.my_second_dbt_model"} */
+
+  create view "postgres"."dmql_base"."my_second_dbt_model__dbt_tmp"
+    
+    
+  as (
+    -- Use the `ref` function to select from other models
+
+select *
+from "postgres"."dmql_base"."my_first_dbt_model"
+where id = 1
+  );
+[0m20:21:18.266769 [debug] [Thread-3  ]: SQL status: CREATE VIEW in 0.037 seconds
+[0m20:21:18.274715 [debug] [Thread-3  ]: Using postgres connection "model.fintech_transactions_dmql.my_second_dbt_model"
+[0m20:21:18.275069 [debug] [Thread-3  ]: On model.fintech_transactions_dmql.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "node_id": "model.fintech_transactions_dmql.my_second_dbt_model"} */
+alter table "postgres"."dmql_base"."my_second_dbt_model__dbt_tmp" rename to "my_second_dbt_model"
+[0m20:21:18.306101 [debug] [Thread-3  ]: SQL status: ALTER TABLE in 0.030 seconds
+[0m20:21:18.310302 [debug] [Thread-3  ]: On model.fintech_transactions_dmql.my_second_dbt_model: COMMIT
+[0m20:21:18.311219 [debug] [Thread-3  ]: Using postgres connection "model.fintech_transactions_dmql.my_second_dbt_model"
+[0m20:21:18.311886 [debug] [Thread-3  ]: On model.fintech_transactions_dmql.my_second_dbt_model: COMMIT
+[0m20:21:18.343456 [debug] [Thread-3  ]: SQL status: COMMIT in 0.031 seconds
+[0m20:21:18.352523 [debug] [Thread-3  ]: Applying DROP to: "postgres"."dmql_base"."my_second_dbt_model__dbt_backup"
+[0m20:21:18.357862 [debug] [Thread-3  ]: Using postgres connection "model.fintech_transactions_dmql.my_second_dbt_model"
+[0m20:21:18.358582 [debug] [Thread-3  ]: On model.fintech_transactions_dmql.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "node_id": "model.fintech_transactions_dmql.my_second_dbt_model"} */
+drop view if exists "postgres"."dmql_base"."my_second_dbt_model__dbt_backup" cascade
+[0m20:21:18.391726 [debug] [Thread-3  ]: SQL status: DROP VIEW in 0.032 seconds
+[0m20:21:18.395493 [debug] [Thread-3  ]: On model.fintech_transactions_dmql.my_second_dbt_model: Close
+[0m20:21:18.397560 [debug] [Thread-3  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b735aee-b18a-4c55-8d00-2e2c5db8fac2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f3b8e20>]}
+[0m20:21:18.399113 [info ] [Thread-3  ]: 2 of 2 OK created sql view model dmql_base.my_second_dbt_model ................. [[32mCREATE VIEW[0m in 0.50s]
+[0m20:21:18.400029 [debug] [Thread-3  ]: Finished running node model.fintech_transactions_dmql.my_second_dbt_model
+[0m20:21:18.402010 [debug] [MainThread]: Using postgres connection "master"
+[0m20:21:18.402570 [debug] [MainThread]: On master: BEGIN
+[0m20:21:18.403028 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:21:18.711212 [debug] [MainThread]: SQL status: BEGIN in 0.307 seconds
+[0m20:21:18.712689 [debug] [MainThread]: On master: COMMIT
+[0m20:21:18.713583 [debug] [MainThread]: Using postgres connection "master"
+[0m20:21:18.714193 [debug] [MainThread]: On master: COMMIT
+[0m20:21:18.745239 [debug] [MainThread]: SQL status: COMMIT in 0.030 seconds
+[0m20:21:18.746525 [debug] [MainThread]: On master: Close
+[0m20:21:18.748116 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:21:18.748689 [debug] [MainThread]: Connection 'model.fintech_transactions_dmql.my_first_dbt_model' was properly closed.
+[0m20:21:18.749221 [debug] [MainThread]: Connection 'model.fintech_transactions_dmql.my_second_dbt_model' was properly closed.
+[0m20:21:18.749825 [info ] [MainThread]: 
+[0m20:21:18.750389 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 2.92 seconds (2.92s).
+[0m20:21:18.752115 [debug] [MainThread]: Command end result
+[0m20:21:18.783323 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/manifest.json
+[0m20:21:18.785012 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/semantic_manifest.json
+[0m20:21:18.790738 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/run_results.json
+[0m20:21:18.791045 [info ] [MainThread]: 
+[0m20:21:18.791399 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:21:18.791673 [info ] [MainThread]: 
+[0m20:21:18.791967 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m20:21:18.792389 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m20:21:18.795921 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.069646, "process_in_blocks": "0", "process_kernel_time": 0.280058, "process_mem_max_rss": "137936896", "process_out_blocks": "0", "process_user_time": 2.10221}
+[0m20:21:18.796330 [debug] [MainThread]: Command `dbt run` succeeded at 20:21:18.796262 after 4.07 seconds
+[0m20:21:18.796647 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb19df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cddf070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e2e4e20>]}
+[0m20:21:18.796977 [debug] [MainThread]: Flushing usage events
+[0m20:21:18.949788 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:21:35.603834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bd0edc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cdad1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cdad4f0>]}
+
+
+============================== 20:21:35.606487 | 56ead452-c3cf-4744-807d-76ca41395eeb ==============================
+[0m20:21:35.606487 [info ] [MainThread]: Running with dbt=1.10.20
+[0m20:21:35.606830 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'no_print': 'None', 'write_json': 'True', 'profiles_dir': '/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dbt', 'printer_width': '80', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'log_format': 'default', 'invocation_command': 'dbt test', 'target_path': 'None', 'debug': 'False', 'log_path': '/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/logs', 'warn_error': 'None', 'introspect': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'version_check': 'True', 'empty': 'None', 'use_colors': 'True'}
+[0m20:21:35.721909 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '56ead452-c3cf-4744-807d-76ca41395eeb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cd58130>]}
+[0m20:21:35.756148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '56ead452-c3cf-4744-807d-76ca41395eeb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d1b76a0>]}
+[0m20:21:35.757360 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m20:21:35.852479 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m20:21:35.938940 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:21:35.939180 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:21:35.964369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '56ead452-c3cf-4744-807d-76ca41395eeb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddff130>]}
+[0m20:21:36.015692 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/manifest.json
+[0m20:21:36.016973 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/semantic_manifest.json
+[0m20:21:36.031853 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '56ead452-c3cf-4744-807d-76ca41395eeb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df550d0>]}
+[0m20:21:36.032160 [info ] [MainThread]: Found 2 models, 447 macros
+[0m20:21:36.032363 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '56ead452-c3cf-4744-807d-76ca41395eeb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ddf14f0>]}
+[0m20:21:36.033061 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m20:21:36.034199 [debug] [MainThread]: Command end result
+[0m20:21:36.071446 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/manifest.json
+[0m20:21:36.072550 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/semantic_manifest.json
+[0m20:21:36.074459 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/run_results.json
+[0m20:21:36.076575 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.51713705, "process_in_blocks": "0", "process_kernel_time": 0.197494, "process_mem_max_rss": "115474432", "process_out_blocks": "0", "process_user_time": 1.126792}
+[0m20:21:36.076817 [debug] [MainThread]: Command `dbt test` succeeded at 20:21:36.076774 after 0.52 seconds
+[0m20:21:36.077037 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bd0edc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bfbf1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb593a0>]}
+[0m20:21:36.077247 [debug] [MainThread]: Flushing usage events
+[0m20:21:36.177672 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:22:16.021577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086a9d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097491f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097494f0>]}
+
+
+============================== 20:22:16.024272 | e61fec9a-a005-420d-af80-642573b4dc34 ==============================
+[0m20:22:16.024272 [info ] [MainThread]: Running with dbt=1.10.20
+[0m20:22:16.024635 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'quiet': 'False', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'introspect': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt docs generate', 'log_cache_events': 'False', 'empty': 'None', 'static_parser': 'True', 'no_print': 'None', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'write_json': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dbt', 'log_path': '/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/logs', 'debug': 'False', 'printer_width': '80', 'use_colors': 'True'}
+[0m20:22:16.138725 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e61fec9a-a005-420d-af80-642573b4dc34', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ca13a0>]}
+[0m20:22:16.172807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e61fec9a-a005-420d-af80-642573b4dc34', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109b6b3d0>]}
+[0m20:22:16.173453 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m20:22:16.265377 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m20:22:16.355778 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:22:16.356018 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:22:16.384119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e61fec9a-a005-420d-af80-642573b4dc34', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a79a130>]}
+[0m20:22:16.396188 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e61fec9a-a005-420d-af80-642573b4dc34', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a788700>]}
+[0m20:22:16.396537 [info ] [MainThread]: Found 2 models, 447 macros
+[0m20:22:16.396757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e61fec9a-a005-420d-af80-642573b4dc34', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a7887f0>]}
+[0m20:22:16.397649 [info ] [MainThread]: 
+[0m20:22:16.397904 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m20:22:16.398087 [info ] [MainThread]: 
+[0m20:22:16.398403 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:22:16.402548 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_dmql_base'
+[0m20:22:16.461955 [debug] [ThreadPool]: Using postgres connection "list_postgres_dmql_base"
+[0m20:22:16.462226 [debug] [ThreadPool]: On list_postgres_dmql_base: BEGIN
+[0m20:22:16.462401 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:22:16.814407 [debug] [ThreadPool]: SQL status: BEGIN in 0.352 seconds
+[0m20:22:16.816164 [debug] [ThreadPool]: Using postgres connection "list_postgres_dmql_base"
+[0m20:22:16.817032 [debug] [ThreadPool]: On list_postgres_dmql_base: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "connection_name": "list_postgres_dmql_base"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'dmql_base'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'dmql_base'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'dmql_base'
+  
+[0m20:22:16.850910 [debug] [ThreadPool]: SQL status: SELECT 9 in 0.033 seconds
+[0m20:22:16.854776 [debug] [ThreadPool]: On list_postgres_dmql_base: ROLLBACK
+[0m20:22:16.885921 [debug] [ThreadPool]: On list_postgres_dmql_base: Close
+[0m20:22:16.902188 [debug] [MainThread]: Using postgres connection "master"
+[0m20:22:16.902883 [debug] [MainThread]: On master: BEGIN
+[0m20:22:16.903404 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:22:17.206713 [debug] [MainThread]: SQL status: BEGIN in 0.303 seconds
+[0m20:22:17.208006 [debug] [MainThread]: Using postgres connection "master"
+[0m20:22:17.209073 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m20:22:17.244732 [debug] [MainThread]: SQL status: SELECT 1 in 0.034 seconds
+[0m20:22:17.249228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e61fec9a-a005-420d-af80-642573b4dc34', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a7885b0>]}
+[0m20:22:17.250458 [debug] [MainThread]: On master: ROLLBACK
+[0m20:22:17.280811 [debug] [MainThread]: On master: Close
+[0m20:22:17.289066 [debug] [Thread-1  ]: Began running node model.fintech_transactions_dmql.my_first_dbt_model
+[0m20:22:17.290487 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_postgres_dmql_base, now model.fintech_transactions_dmql.my_first_dbt_model)
+[0m20:22:17.291198 [debug] [Thread-1  ]: Began compiling node model.fintech_transactions_dmql.my_first_dbt_model
+[0m20:22:17.303061 [debug] [Thread-1  ]: Writing injected SQL for node "model.fintech_transactions_dmql.my_first_dbt_model"
+[0m20:22:17.304240 [debug] [Thread-1  ]: Began executing node model.fintech_transactions_dmql.my_first_dbt_model
+[0m20:22:17.304871 [debug] [Thread-1  ]: Finished running node model.fintech_transactions_dmql.my_first_dbt_model
+[0m20:22:17.305595 [debug] [Thread-3  ]: Began running node model.fintech_transactions_dmql.my_second_dbt_model
+[0m20:22:17.306351 [debug] [Thread-3  ]: Acquiring new postgres connection 'model.fintech_transactions_dmql.my_second_dbt_model'
+[0m20:22:17.306835 [debug] [Thread-3  ]: Began compiling node model.fintech_transactions_dmql.my_second_dbt_model
+[0m20:22:17.310031 [debug] [Thread-3  ]: Writing injected SQL for node "model.fintech_transactions_dmql.my_second_dbt_model"
+[0m20:22:17.310575 [debug] [Thread-3  ]: Began executing node model.fintech_transactions_dmql.my_second_dbt_model
+[0m20:22:17.311282 [debug] [Thread-3  ]: Finished running node model.fintech_transactions_dmql.my_second_dbt_model
+[0m20:22:17.312142 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:22:17.312418 [debug] [MainThread]: Connection 'model.fintech_transactions_dmql.my_first_dbt_model' was properly closed.
+[0m20:22:17.312616 [debug] [MainThread]: Connection 'model.fintech_transactions_dmql.my_second_dbt_model' was properly closed.
+[0m20:22:17.313151 [debug] [MainThread]: Command end result
+[0m20:22:17.376187 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/manifest.json
+[0m20:22:17.377513 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/semantic_manifest.json
+[0m20:22:17.381766 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/run_results.json
+[0m20:22:17.383484 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m20:22:17.383665 [info ] [MainThread]: Building catalog
+[0m20:22:17.389003 [debug] [ThreadPool]: Acquiring new postgres connection 'postgres.information_schema'
+[0m20:22:17.393484 [debug] [ThreadPool]: Using postgres connection "postgres.information_schema"
+[0m20:22:17.393672 [debug] [ThreadPool]: On postgres.information_schema: BEGIN
+[0m20:22:17.393834 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:22:17.687332 [debug] [ThreadPool]: SQL status: BEGIN in 0.293 seconds
+[0m20:22:17.689384 [debug] [ThreadPool]: Using postgres connection "postgres.information_schema"
+[0m20:22:17.690481 [debug] [ThreadPool]: On postgres.information_schema: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "fintech_transactions_dmql", "target_name": "dev", "connection_name": "postgres.information_schema"} */
+
+    
+    
+
+    select
+        'postgres' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('dmql_base') and
+           upper(tbl.relname) = upper('my_first_dbt_model')) or (upper(sch.nspname) = upper('dmql_base') and
+           upper(tbl.relname) = upper('my_second_dbt_model')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m20:22:17.734961 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.043 seconds
+[0m20:22:17.740790 [debug] [ThreadPool]: On postgres.information_schema: ROLLBACK
+[0m20:22:17.772480 [debug] [ThreadPool]: On postgres.information_schema: Close
+[0m20:22:17.793708 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/catalog.json
+[0m20:22:17.816823 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/manifest.json
+[0m20:22:17.818258 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/semantic_manifest.json
+[0m20:22:17.818561 [info ] [MainThread]: Catalog written to /Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/target/catalog.json
+[0m20:22:17.821695 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 1.844759, "process_in_blocks": "0", "process_kernel_time": 0.234005, "process_mem_max_rss": "132497408", "process_out_blocks": "0", "process_user_time": 1.306955}
+[0m20:22:17.822060 [debug] [MainThread]: Command `dbt docs generate` succeeded at 20:22:17.821995 after 1.85 seconds
+[0m20:22:17.822324 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m20:22:17.822545 [debug] [MainThread]: Connection 'postgres.information_schema' was properly closed.
+[0m20:22:17.822803 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1086a9d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a781e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a781ee0>]}
+[0m20:22:17.823108 [debug] [MainThread]: Flushing usage events
+[0m20:22:17.912614 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:22:18.825083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f7dd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10901b2b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10901b5b0>]}
+
+
+============================== 20:22:18.827254 | 39e1ede3-e3cb-49ff-879b-fa69a73d181e ==============================
+[0m20:22:18.827254 [info ] [MainThread]: Running with dbt=1.10.20
+[0m20:22:18.827603 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'static_parser': 'True', 'introspect': 'True', 'write_json': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt docs serve', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'debug': 'False', 'log_cache_events': 'False', 'warn_error': 'None', 'indirect_selection': 'eager', 'empty': 'None', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'version_check': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'target_path': 'None', 'printer_width': '80', 'profiles_dir': '/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dbt', 'log_path': '/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/logs', 'no_print': 'None'}
+[0m20:22:18.924247 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '39e1ede3-e3cb-49ff-879b-fa69a73d181e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108fd79d0>]}
+[0m20:22:18.957777 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '39e1ede3-e3cb-49ff-879b-fa69a73d181e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1088ec250>]}
+[0m20:23:11.159313 [error] [MainThread]: Encountered an error:
+
+[0m20:23:11.205441 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/lib/python3.9/site-packages/dbt/cli/requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/lib/python3.9/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/lib/python3.9/site-packages/dbt/cli/requires.py", line 272, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/lib/python3.9/site-packages/dbt/cli/requires.py", line 317, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/lib/python3.9/site-packages/dbt/cli/requires.py", line 364, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/lib/python3.9/site-packages/dbt/cli/main.py", line 307, in docs_serve
+    results = task.run()
+  File "/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/lib/python3.9/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 232, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+
+[0m20:23:11.209931 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 52.426044, "process_in_blocks": "0", "process_kernel_time": 0.13283, "process_mem_max_rss": "109068288", "process_out_blocks": "0", "process_user_time": 0.885822}
+[0m20:23:11.210545 [debug] [MainThread]: Command `dbt docs serve` failed at 20:23:11.210430 after 52.43 seconds
+[0m20:23:11.211172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f7dd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109838610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109838520>]}
+[0m20:23:11.211652 [debug] [MainThread]: Flushing usage events
+[0m20:23:11.376181 [debug] [MainThread]: An error was encountered while trying to flush usage events
