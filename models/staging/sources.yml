@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: dmql_base
+    schema: dmql_base
+    description: "Raw FinTech OLTP tables ingested in Phase 1"
+    quoting:
+      identifier: true
+    tables:
+      - name: DimProductCategory
+        description: "Top-level product categories"
+      - name: DimProductSubCategory
+        description: "Product sub-categories linked to categories"
+      - name: DimProduct
+        description: "Individual financial products (loans, savings, etc.)"
+      - name: DimCustomer
+        description: "All customers (global)"
+      - name: DimCustomerUSA
+        description: "US-only customer subset"
+      - name: DimAccount
+        description: "Customer accounts with balances"
+      - name: FactTransaction
+        description: "Core fact table — all financial transactions"

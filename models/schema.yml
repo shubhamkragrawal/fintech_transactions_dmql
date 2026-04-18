@@ -1,0 +1,132 @@
+version: 2
+
+models:
+  # ──────────────────────────────────────────
+  # STAGING
+  # ──────────────────────────────────────────
+  - name: stg_transactions
+    description: "Cleaned and standardized raw FactTransaction records"
+    columns:
+      - name: transaction_id
+        tests: [unique, not_null]
+      - name: account_id
+        tests: [not_null]
+      - name: transaction_amount
+        tests: [not_null]
+      - name: transaction_date
+        tests: [not_null]
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['SUCCESS', 'FAILED']
+
+  - name: stg_customers
+    description: "Cleaned DimCustomer records"
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+      - name: full_name
+        tests: [not_null]
+
+  - name: stg_accounts
+    description: "Cleaned DimAccount records"
+    columns:
+      - name: account_id
+        tests: [unique, not_null]
+      - name: customer_id
+        tests: [not_null]
+
+  - name: stg_products
+    description: "Flattened product/subcategory/category"
+    columns:
+      - name: product_id
+        tests: [unique, not_null]
+      - name: product_name
+        tests: [not_null]
+
+  # ──────────────────────────────────────────
+  # DIMENSIONS
+  # ──────────────────────────────────────────
+  - name: dim_customer
+    description: "Final customer dimension with age buckets"
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+      - name: full_name
+        tests: [not_null]
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['ACTIVE', 'INACTIVE', 'SUSPENDED']
+
+  - name: dim_account
+    description: "Account dimension enriched with customer info"
+    columns:
+      - name: account_id
+        tests: [unique, not_null]
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id
+      - name: account_status
+        tests:
+          - accepted_values:
+              values: ['OPEN', 'CLOSED']
+      - name: balance
+        tests: [not_null]
+
+  - name: dim_product
+    description: "Flattened product dimension with category hierarchy"
+    columns:
+      - name: product_id
+        tests: [unique, not_null]
+      - name: product_name
+        tests: [not_null]
+      - name: category_name
+        tests: [not_null]
+
+  - name: dim_date
+    description: "Date dimension spanning the full transaction date range"
+    columns:
+      - name: date_key
+        tests: [unique, not_null]
+      - name: year
+        tests: [not_null]
+      - name: month
+        tests: [not_null]
+
+  # ──────────────────────────────────────────
+  # FACTS
+  # ──────────────────────────────────────────
+  - name: fact_transactions
+    description: "Core Star Schema fact table — one row per transaction"
+    columns:
+      - name: transaction_id
+        tests: [unique, not_null]
+      - name: account_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_account')
+              field: account_id
+              config:
+                severity: warn
+      - name: product_id
+        tests:
+          - relationships:
+              to: ref('dim_product')
+              field: product_id
+      - name: date_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: transaction_amount
+        tests: [not_null]
+      - name: transaction_status
+        tests:
+          - accepted_values:
+              values: ['SUCCESS', 'FAILED']
