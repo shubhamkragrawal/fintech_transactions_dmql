@@ -1,0 +1,55 @@
+name: dbt CI Pipeline
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    env:
+      DB_HOST:      ${{ secrets.DB_HOST }}
+      DB_USER:      ${{ secrets.DB_USER }}
+      DB_NAME:      ${{ secrets.DB_NAME }}
+      DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install \
+            dbt-postgres \
+            sqlfluff \
+            sqlfluff-templater-dbt
+
+      - name: Copy profiles.yml to dbt home
+        run: |
+          mkdir -p ~/.dbt
+          cp profiles.yml ~/.dbt/profiles.yml
+
+      - name: Install dbt packages
+        run: dbt deps
+
+      - name: Lint SQL with SQLFluff
+        run: |
+          sqlfluff lint models/ \
+            --dialect postgres \
+            --templater dbt \
+            --config .sqlfluff
+
+      - name: Run dbt models
+        run: dbt run --target dev
+
+      - name: Run dbt tests
+        run: dbt test --target dev
+
+      - name: Generate dbt docs
+        run: dbt docs generate
