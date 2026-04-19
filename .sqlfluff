@@ -3,11 +3,10 @@ templater = dbt
 dialect = postgres
 max_line_length = 120
 
-# Ignore generated target folder
 ignore = target/,dbt_packages/
 
 [sqlfluff:templater:dbt]
-project_dir = fintech_dbt
+project_dir = .
 profiles_dir = .
 
 [sqlfluff:rules:layout.indent]
