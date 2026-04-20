@@ -1,4 +1,8 @@
-
+.dmql_final/
+logs
+.DS_Store
+.user.yml
 target/
 dbt_packages/
 logs/
+

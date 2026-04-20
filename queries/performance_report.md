@@ -1,18 +1,14 @@
-# Phase 2 — Performance Tuning Report
-## FinTech Dataset | AWS PostgreSQL
+# Phase 2 - Performance Tuning Report
 
 ---
 
 ## 1. Query Profiled
 
-**Query 3 — Failure Rate & Risk Analysis by Product Category**
-(chosen because it involves a 4-table JOIN chain and window functions)
+**Query 3 - Failure Rate & Risk Analysis by Product Category**
 
 ---
 
 ## 2. Before Indexing
-
-Run this in your AWS PostgreSQL client and paste the output below:
 
 ```sql
 EXPLAIN ANALYZE
@@ -38,60 +34,70 @@ FROM product_stats
 ORDER BY total_txns DESC;
 ```
 
-**Paste EXPLAIN ANALYZE output here:**
 ```
-[PASTE OUTPUT HERE]
+Sort  (cost=1704.98..1718.48 rows=5400 width=68) (actual time=7.115..7.121 rows=27 loops=1)
+  Sort Key: product_stats.total_txns DESC
+  Sort Method: quicksort  Memory: 26kB
+  ->  WindowAgg  (cost=1262.24..1370.22 rows=5400 width=68) (actual time=7.086..7.109 rows=27 loops=1)
+        ->  Sort  (cost=1262.22..1275.72 rows=5400 width=60) (actual time=7.080..7.085 rows=27 loops=1)
+              Sort Key: product_stats.category, product_stats.total_txns DESC
+              Sort Method: quicksort  Memory: 26kB
+              ->  Subquery Scan on product_stats  (cost=873.45..927.45 rows=5400 width=60) (actual time=7.002..7.047 rows=27 loops=1)
+                    ->  HashAggregate  (cost=873.45..927.45 rows=5400 width=60) (actual time=7.001..7.043 rows=27 loops=1)
+                          Group Key: pc."ProductCategoryName", p."ProductName"
 ```
 
-**Observed execution time (before):** `XX ms`
+**Observed execution time (before):** `7.121 ms`
 
-**Bottlenecks identified:**
-- [ ] Sequential Scan on `facttransaction` (no index on `productid`)
-- [ ] Sequential Scan on `dimproduct` (no index on `productsubcategoryid`)
-- [ ] High cost hash joins due to missing FK indexes
+**Observations:**
+- PostgreSQL uses a **HashAggregate** for the GROUP BY - efficient for this data size
+- **QuickSort** used for both ORDER BY and window function partitioning
+- No indexes exist on FK columns; planner uses sequential scans
 
 ---
 
 ## 3. Indexes Applied
 
 ```sql
--- Index 1: FK join — transactions to products
-CREATE INDEX idx_facttxn_productid
-    ON dmql_base.facttransaction(productid);
+CREATE INDEX IF NOT EXISTS idx_facttxn_productid
+    ON dmql_base."FactTransaction"("ProductID");
 
--- Index 2: FK join — transactions to accounts
-CREATE INDEX idx_facttxn_accountid
-    ON dmql_base.facttransaction(accountid);
+CREATE INDEX IF NOT EXISTS idx_facttxn_accountid
+    ON dmql_base."FactTransaction"("AccountID");
 
--- Index 3: Filtering by status (used in FILTER aggregations)
-CREATE INDEX idx_facttxn_status
-    ON dmql_base.facttransaction(status);
+CREATE INDEX IF NOT EXISTS idx_facttxn_status
+    ON dmql_base."FactTransaction"("Status");
 
--- Index 4: Date range queries (used in Query 1)
-CREATE INDEX idx_facttxn_date
-    ON dmql_base.facttransaction(transactiondate);
+CREATE INDEX IF NOT EXISTS idx_facttxn_date
+    ON dmql_base."FactTransaction"("TransactionDate");
 
--- Index 5: FK join — product to sub-category
-CREATE INDEX idx_product_subcategoryid
-    ON dmql_base.dimproduct(productsubcategoryid);
+CREATE INDEX IF NOT EXISTS idx_product_subcategoryid
+    ON dmql_base."DimProduct"("ProductSubcategoryID");
 
--- Index 6: FK join — account to customer
-CREATE INDEX idx_account_customerid
-    ON dmql_base.dimaccount(customerid);
+CREATE INDEX IF NOT EXISTS idx_account_customerid
+    ON dmql_base."DimAccount"("CustomerID");
+
 ```
 
 ---
 
 ## 4. After Indexing
 
-Re-run the same `EXPLAIN ANALYZE` query after creating the indexes.
 
-**Paste EXPLAIN ANALYZE output here:**
-```
-[PASTE OUTPUT HERE]
-```
 
-**Observed execution time (after):** `XX ms`
+```
+Sort  (cost=1704.98..1718.48 rows=5400 width=68) (actual time=7.177..7.183 rows=27 loops=1)
+  Sort Key: product_stats.total_txns DESC
+  Sort Method: quicksort  Memory: 26kB
+  ->  WindowAgg  (cost=1262.24..1370.22 rows=5400 width=68) (actual time=7.146..7.170 rows=27 loops=1)
+        ->  Sort  (cost=1262.22..1275.72 rows=5400 width=60) (actual time=7.139..7.145 rows=27 loops=1)
+              Sort Key: product_stats.category, product_stats.total_txns DESC
+              Sort Method: quicksort  Memory: 26kB
+              ->  Subquery Scan on product_stats  (cost=873.45..927.45 rows=5400 width=60) (actual time=7.078..7.119 rows=27 loops=1)
+                    ->  HashAggregate  (cost=873.45..927.45 rows=5400 width=60) (actual time=7.076..7.114 rows=27 loops=1)
+                          Group Key: pc."ProductCategoryName", p."ProductName"```
+
+**Observed execution time (after):** `7.183 ms`
 
 ---
 
@@ -99,15 +105,26 @@ Re-run the same `EXPLAIN ANALYZE` query after creating the indexes.
 
 | Metric                  | Before | After |
 |-------------------------|--------|-------|
-| Execution time          | XX ms  | XX ms |
-| Seq Scans on fact table | X      | 0     |
-| Index Scans used        | 0      | X     |
-| Improvement             | —      | XX%   |
+| Execution time          | 7.121 ms  | 7.183 ms |
+| Query plan              | Hash + Seq | Hash + Seq |
+| Indexes used            | None       | None*      |
 
 ---
 
-## 6. Key Findings
+## 6. Analysis & Findings
 
-- Adding an index on `facttransaction.productid` eliminated the sequential scan on the largest table, which produced the biggest speedup.
-- The composite filter on `status` benefited from a partial index approach since most analytical queries target `COMPLETED` transactions.
-- Hash joins were replaced by index nested-loop joins for smaller dimension table lookups.
+The query execution plan remained identical before and after index creation.
+This is **expected and correct behavior**  not a failure of the indexing strategy.
+
+PostgreSQL's query planner performs cost-based optimization. For small datasets
+(27 distinct product-category combinations aggregated from a few thousand rows),
+the planner correctly determines that a **sequential scan is more efficient**
+than an index lookup. Reading the entire small table in one pass has lower
+overhead than repeatedly jumping to index entries.
+
+**When these indexes WILL have impact:**
+The indexes on `"ProductID"`, `"AccountID"`, `"Status"`, and `"TransactionDate"`
+are designed for production-scale workloads. Their benefit becomes measurable when:
+- The `FactTransaction` table grows beyond ~100,000 rows
+- Queries filter on `"Status"` or `"TransactionDate"` with high selectivity
+- JOIN operations link to large dimension tables
