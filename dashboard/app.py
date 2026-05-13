@@ -80,11 +80,19 @@ selected_channels = st.sidebar.multiselect(
     default=df_raw['TransactionChannel'].unique()
 )
 
+# 3. Region Multi-select Dropdown Filter
+selected_region = st.sidebar.multiselect(
+    "Region",
+    options=df_raw['Region'].unique(),
+    default=df_raw['Region'].unique()
+)
+
 # Apply runtime logical filtering
 df_filtered = df_raw[
     (df_raw['TransactionDate'] >= start_date) & 
     (df_raw['TransactionDate'] <= end_date) &
-    (df_raw['TransactionChannel'].isin(selected_channels))
+    (df_raw['TransactionChannel'].isin(selected_channels)) &
+    (df_raw['Region'].isin(selected_region))
 ]
 
 # KPI METRICS
