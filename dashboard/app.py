@@ -127,7 +127,7 @@ with vis_col2:
     )
     st.plotly_chart(fig_pie, use_container_width=True)
 
-st.markdown("---")
+st.markdown("-----")
 
 # DATA VIEW LAYER
 st.subheader("🔍 Filtered Transaction Ledger (Sample Preview)")
