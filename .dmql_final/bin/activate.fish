@@ -29,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final"
+set -gx VIRTUAL_ENV "/Users/kavyansh/dmql_proj/fintech_transactions_dmql/.dmql_final"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

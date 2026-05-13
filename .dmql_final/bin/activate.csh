@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final"
+setenv VIRTUAL_ENV "/Users/kavyansh/dmql_proj/fintech_transactions_dmql/.dmql_final"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

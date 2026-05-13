@@ -1,4 +1,4 @@
-#!/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final/bin/python3
+#!/Users/kavyansh/dmql_proj/fintech_transactions_dmql/.dmql_final/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/shubhamagrawal/Documents/MS_fall_25/MS_fall_25_uni/sem2/DMQL/fintech_transactions_dmql/.dmql_final"
+VIRTUAL_ENV="/Users/kavyansh/dmql_proj/fintech_transactions_dmql/.dmql_final"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

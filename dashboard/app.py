@@ -44,10 +44,10 @@ def fetch_transaction_data():
             c."FullName",
             c."Region",
             p."ProductName"
-        FROM "FactTransaction" t
-        JOIN "DimAccount" a ON t."AccountID" = a."AccountID"
-        JOIN "DimCustomer" c ON a."CustomerID" = c."CustomerID"
-        JOIN "DimProduct" p ON t."ProductID" = p."ProductID";
+        FROM dmql_base."FactTransaction" t
+        JOIN dmql_base."DimAccount" a ON t."AccountID" = a."AccountID"
+        JOIN dmql_base."DimCustomer" c ON a."CustomerID" = c."CustomerID"
+        JOIN dmql_base."DimProduct" p ON t."ProductID" = p."ProductID";
     """
     with engine.connect() as conn:
         df = pd.read_sql(query, conn)
