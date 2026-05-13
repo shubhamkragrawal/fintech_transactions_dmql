@@ -43,6 +43,7 @@ def fetch_transaction_data():
             t."TransactionChannel",
             c."FullName",
             c."Region",
+            c."Gender",
             p."ProductName"
         FROM dmql_base."FactTransaction" t
         JOIN dmql_base."DimAccount" a ON t."AccountID" = a."AccountID"
@@ -87,12 +88,20 @@ selected_region = st.sidebar.multiselect(
     default=df_raw['Region'].unique()
 )
 
+# 4. Gender Multi-select Dropdown Filter
+selected_gender = st.sidebar.multiselect(
+    "Gender",
+    options=df_raw['Gender'].unique(),
+    default=df_raw['Gender'].unique()
+)
+
 # Apply runtime logical filtering
 df_filtered = df_raw[
     (df_raw['TransactionDate'] >= start_date) & 
     (df_raw['TransactionDate'] <= end_date) &
     (df_raw['TransactionChannel'].isin(selected_channels)) &
-    (df_raw['Region'].isin(selected_region))
+    (df_raw['Region'].isin(selected_region)) &
+    (df_raw['Gender'].isin(selected_gender))
 ]
 
 # KPI METRICS
