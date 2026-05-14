@@ -5,4 +5,5 @@ logs
 target/
 dbt_packages/
 logs/
+dashboard/.streamlit/secrets.toml
 
