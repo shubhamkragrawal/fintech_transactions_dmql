@@ -44,11 +44,13 @@ def fetch_transaction_data():
             c."FullName",
             c."Region",
             c."Gender",
-            p."ProductName"
+            p."ProductName",
+            q."ProductSubCategoryName"
         FROM dmql_base."FactTransaction" t
         JOIN dmql_base."DimAccount" a ON t."AccountID" = a."AccountID"
         JOIN dmql_base."DimCustomer" c ON a."CustomerID" = c."CustomerID"
-        JOIN dmql_base."DimProduct" p ON t."ProductID" = p."ProductID";
+        JOIN dmql_base."DimProduct" p ON t."ProductID" = p."ProductID"
+        JOIN dmql_base."DimProductSubCategory" q ON p."ProductSubcategoryID" = q."ProductSubCategoryID";
     """
     with engine.connect() as conn:
         df = pd.read_sql(query, conn)
@@ -95,13 +97,29 @@ selected_gender = st.sidebar.multiselect(
     default=df_raw['Gender'].unique()
 )
 
+# 5. Transaction-Type Multi-select Dropdown Filter
+selected_transaction_type = st.sidebar.multiselect(
+    "Transaction Type",
+    options=df_raw['TransactionType'].unique(),
+    default=df_raw['TransactionType'].unique()
+)
+
+# 6. Product Sub-category Multi-select Dropdown Filter
+selected_sub_category = st.sidebar.multiselect(
+    "Product Category",
+    options=df_raw['ProductSubCategoryName'].unique(),
+    default=df_raw['ProductSubCategoryName'].unique()
+)
+
 # Apply runtime logical filtering
 df_filtered = df_raw[
     (df_raw['TransactionDate'] >= start_date) & 
     (df_raw['TransactionDate'] <= end_date) &
     (df_raw['TransactionChannel'].isin(selected_channels)) &
     (df_raw['Region'].isin(selected_region)) &
-    (df_raw['Gender'].isin(selected_gender))
+    (df_raw['Gender'].isin(selected_gender)) &
+    (df_raw['TransactionType'].isin(selected_transaction_type)) &
+    (df_raw['ProductSubCategoryName'].isin(selected_sub_category))
 ]
 
 # KPI METRICS
