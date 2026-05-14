@@ -167,6 +167,47 @@ with vis_col2:
 vis_col3, vis_col4 = st.columns(2)
 
 with vis_col3:
+    st.subheader("🛍️ Spending Distribution by Transaction Channel")
+    df_channel = df_filtered.groupby('TransactionChannel')['TransactionAmount'].sum().reset_index()
+    fig_pie = px.pie(
+        df_channel, 
+        values='TransactionAmount', 
+        names='TransactionChannel',
+        hole=0.4,
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
+    )
+    st.plotly_chart(fig_pie, use_container_width=True)
+
+with vis_col4:
+    st.subheader("🛍️ Spending Distribution by Region")
+    df_region = df_filtered.groupby('Region')['TransactionAmount'].sum().reset_index()
+    fig_pie = px.pie(
+        df_region, 
+        values='TransactionAmount', 
+        names='Region',
+        hole=0.4,
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
+    )
+    st.plotly_chart(fig_pie, use_container_width=True)
+
+vis_col5, vis_col6 = st.columns(2)
+
+with vis_col5:
+    st.subheader("🛍️ Spending Distribution by Gender ")
+    df_gender = df_filtered.groupby('Gender')['TransactionAmount'].sum().reset_index()
+    fig_pie = px.pie(
+        df_gender, 
+        values='TransactionAmount', 
+        names='Gender',
+        hole=0.4,
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
+    )
+    st.plotly_chart(fig_pie, use_container_width=True)
+
+with vis_col6:
     st.subheader("🛍️ Spending Distribution by Transaction Type")
     df_type = df_filtered.groupby('TransactionType')['TransactionAmount'].sum().reset_index()
     fig_pie = px.pie(
