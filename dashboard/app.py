@@ -146,7 +146,8 @@ with vis_col1:
         x='TransactionDate', 
         y='TransactionAmount',
         labels={'TransactionAmount': 'Total Amount ($)', 'TransactionDate': 'Date'},
-        template="plotly_dark"
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
     )
     st.plotly_chart(fig_line, use_container_width=True)
 
@@ -158,7 +159,8 @@ with vis_col2:
         values='TransactionAmount', 
         names='TransactionType',
         hole=0.4,
-        template="plotly_dark"
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
     )
     st.plotly_chart(fig_pie, use_container_width=True)
 
