@@ -43,11 +43,14 @@ def fetch_transaction_data():
             t."TransactionChannel",
             c."FullName",
             c."Region",
-            p."ProductName"
+            c."Gender",
+            p."ProductName",
+            q."ProductSubCategoryName"
         FROM dmql_base."FactTransaction" t
         JOIN dmql_base."DimAccount" a ON t."AccountID" = a."AccountID"
         JOIN dmql_base."DimCustomer" c ON a."CustomerID" = c."CustomerID"
-        JOIN dmql_base."DimProduct" p ON t."ProductID" = p."ProductID";
+        JOIN dmql_base."DimProduct" p ON t."ProductID" = p."ProductID"
+        JOIN dmql_base."DimProductSubCategory" q ON p."ProductSubcategoryID" = q."ProductSubCategoryID";
     """
     with engine.connect() as conn:
         df = pd.read_sql(query, conn)
@@ -80,11 +83,43 @@ selected_channels = st.sidebar.multiselect(
     default=df_raw['TransactionChannel'].unique()
 )
 
+# 3. Region Multi-select Dropdown Filter
+selected_region = st.sidebar.multiselect(
+    "Region",
+    options=df_raw['Region'].unique(),
+    default=df_raw['Region'].unique()
+)
+
+# 4. Gender Multi-select Dropdown Filter
+selected_gender = st.sidebar.multiselect(
+    "Gender",
+    options=df_raw['Gender'].unique(),
+    default=df_raw['Gender'].unique()
+)
+
+# 5. Transaction-Type Multi-select Dropdown Filter
+selected_transaction_type = st.sidebar.multiselect(
+    "Transaction Type",
+    options=df_raw['TransactionType'].unique(),
+    default=df_raw['TransactionType'].unique()
+)
+
+# 6. Product Sub-category Multi-select Dropdown Filter
+selected_sub_category = st.sidebar.multiselect(
+    "Product Category",
+    options=df_raw['ProductSubCategoryName'].unique(),
+    default=df_raw['ProductSubCategoryName'].unique()
+)
+
 # Apply runtime logical filtering
 df_filtered = df_raw[
     (df_raw['TransactionDate'] >= start_date) & 
     (df_raw['TransactionDate'] <= end_date) &
-    (df_raw['TransactionChannel'].isin(selected_channels))
+    (df_raw['TransactionChannel'].isin(selected_channels)) &
+    (df_raw['Region'].isin(selected_region)) &
+    (df_raw['Gender'].isin(selected_gender)) &
+    (df_raw['TransactionType'].isin(selected_transaction_type)) &
+    (df_raw['ProductSubCategoryName'].isin(selected_sub_category))
 ]
 
 # KPI METRICS
@@ -111,11 +146,68 @@ with vis_col1:
         x='TransactionDate', 
         y='TransactionAmount',
         labels={'TransactionAmount': 'Total Amount ($)', 'TransactionDate': 'Date'},
-        template="plotly_dark"
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
     )
     st.plotly_chart(fig_line, use_container_width=True)
 
 with vis_col2:
+    st.subheader("🛍️ Spending Distribution by Product Category")
+    df_category = df_filtered.groupby('ProductSubCategoryName')['TransactionAmount'].sum().reset_index()
+    fig_pie = px.pie(
+        df_category, 
+        values='TransactionAmount', 
+        names='ProductSubCategoryName',
+        hole=0.4,
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
+    )
+    st.plotly_chart(fig_pie, use_container_width=True)
+
+vis_col3, vis_col4 = st.columns(2)
+
+with vis_col3:
+    st.subheader("🛍️ Spending Distribution by Transaction Channel")
+    df_channel = df_filtered.groupby('TransactionChannel')['TransactionAmount'].sum().reset_index()
+    fig_pie = px.pie(
+        df_channel, 
+        values='TransactionAmount', 
+        names='TransactionChannel',
+        hole=0.4,
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
+    )
+    st.plotly_chart(fig_pie, use_container_width=True)
+
+with vis_col4:
+    st.subheader("🛍️ Spending Distribution by Region")
+    df_region = df_filtered.groupby('Region')['TransactionAmount'].sum().reset_index()
+    fig_pie = px.pie(
+        df_region, 
+        values='TransactionAmount', 
+        names='Region',
+        hole=0.4,
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
+    )
+    st.plotly_chart(fig_pie, use_container_width=True)
+
+vis_col5, vis_col6 = st.columns(2)
+
+with vis_col5:
+    st.subheader("🛍️ Spending Distribution by Gender ")
+    df_gender = df_filtered.groupby('Gender')['TransactionAmount'].sum().reset_index()
+    fig_pie = px.pie(
+        df_gender, 
+        values='TransactionAmount', 
+        names='Gender',
+        hole=0.4,
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
+    )
+    st.plotly_chart(fig_pie, use_container_width=True)
+
+with vis_col6:
     st.subheader("🛍️ Spending Distribution by Transaction Type")
     df_type = df_filtered.groupby('TransactionType')['TransactionAmount'].sum().reset_index()
     fig_pie = px.pie(
@@ -123,9 +215,12 @@ with vis_col2:
         values='TransactionAmount', 
         names='TransactionType',
         hole=0.4,
-        template="plotly_dark"
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
     )
     st.plotly_chart(fig_pie, use_container_width=True)
+
+
 
 st.markdown("-----")
 
