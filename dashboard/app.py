@@ -152,6 +152,21 @@ with vis_col1:
     st.plotly_chart(fig_line, use_container_width=True)
 
 with vis_col2:
+    st.subheader("🛍️ Spending Distribution by Product Category")
+    df_category = df_filtered.groupby('ProductSubCategoryName')['TransactionAmount'].sum().reset_index()
+    fig_pie = px.pie(
+        df_category, 
+        values='TransactionAmount', 
+        names='ProductSubCategoryName',
+        hole=0.4,
+        template="plotly_dark",
+        color_discrete_sequence=["#00A2FF"]
+    )
+    st.plotly_chart(fig_pie, use_container_width=True)
+
+vis_col3, vis_col4 = st.columns(2)
+
+with vis_col3:
     st.subheader("🛍️ Spending Distribution by Transaction Type")
     df_type = df_filtered.groupby('TransactionType')['TransactionAmount'].sum().reset_index()
     fig_pie = px.pie(
@@ -163,6 +178,8 @@ with vis_col2:
         color_discrete_sequence=["#00A2FF"]
     )
     st.plotly_chart(fig_pie, use_container_width=True)
+
+
 
 st.markdown("-----")
 
