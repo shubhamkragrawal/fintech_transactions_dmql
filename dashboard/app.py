@@ -5,7 +5,7 @@ import plotly.express as px
 import datetime
 
 st.set_page_config(
-    page_title="FinTech Transaction Analytics Dashboard",
+    page_title="Fintech Transaction Analytics Dashboard",
     page_icon="📊",
     layout="wide"
 )
@@ -56,13 +56,14 @@ def fetch_transaction_data():
         df = pd.read_sql(query, conn)
     # Standardize data structures
     df['TransactionDate'] = pd.to_datetime(df['TransactionDate']).dt.date
+    df['TransactionAmount'] = df['TransactionAmount'].abs()
     return df
 
 with st.spinner("Fetching data from AWS Production Warehouse..."):
     df_raw = fetch_transaction_data()
 
 # INTERACTIVE WIDGETS (Sidebar Filters)
-st.sidebar.header("Filter Analytics")
+st.sidebar.header("Filter Data")
 
 # 1. Date Range Slider Widget
 min_date = df_raw['TransactionDate'].min()
@@ -224,6 +225,6 @@ with vis_col6:
 
 st.markdown("-----")
 
-# DATA VIEW LAYER
+# Raw Data
 st.subheader("🔍 Filtered Transaction Ledger (Sample Preview)")
 st.dataframe(df_filtered.head(100), use_container_width=True)
