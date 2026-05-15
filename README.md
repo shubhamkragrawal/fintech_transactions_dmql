@@ -155,7 +155,7 @@ Streamlit Dashboard
 
 - Strategic SQL indexing and query optimization for 100,000+ row dataset
 - Streamlit dashboard with interactive widgets: date sliders, account type filters
-- KPI visualizations: daily transaction volume trends, branch liquidity, account balance distributions
+- KPI visualizations: daily transaction volume trends, spending distribution, average transaction value
 - `@st.cache_data` caching to keep the live cloud-hosted app responsive
 
 ---
@@ -317,11 +317,11 @@ Full implementation in `sql/security.sql`.
 ## Dashboard KPIs
 
 - Daily transaction volume trends
-- Overall branch liquidity
-- Account balance distributions
-- 30-day rolling average balance per account
-- Transaction volume ranking by branch
-- Account type breakdown (filter widget)
+- Spending distribution by Product category, Transaction Channel, Region, Gender and Transaction Type
+- Total transaction volume and count
+- Average transaction value
+- Active regions count
+- Transaction Channel, Gender and Region breakdown (filter widget)
 - Date range selector (slider widget)
 
   
