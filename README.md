@@ -2,6 +2,9 @@
 ### EAS 550 — Financial Services & Retail Banking Analytics
 **Team 2:** Shubham Kumar Agrawal · Rahul Yadav · Kavyansh Tiwari
 
+**Live Application:** [https://fintechapp550.streamlit.app](https://fintechapp550.streamlit.app)  
+**Repository:** [https://github.com/shubhamkragrawal/fintech_transactions_dmql](https://github.com/shubhamkragrawal/fintech_transactions_dmql)
+
 ---
 
 ## Project Overview
@@ -78,7 +81,7 @@ Streamlit Dashboard
 │   └── security.sql                # RBAC roles and users
 ├── dbt/
 │   └── models/                     # dbt transformation models
-├── streamlit/
+├── dashboard/
 │   └── app.py                      # Dashboard application
 └── README.md
 ```
@@ -260,6 +263,37 @@ SELECT 'DimCustomer'           AS table_name, COUNT(*) AS rows FROM etl."DimCust
 SELECT 'DimCustomerUSA'        AS table_name, COUNT(*) AS rows FROM etl."DimCustomerUSA"        UNION ALL
 SELECT 'DimAccount'            AS table_name, COUNT(*) AS rows FROM etl."DimAccount"            UNION ALL
 SELECT 'FactTransaction'       AS table_name, COUNT(*) AS rows FROM etl."FactTransaction";
+```
+
+---
+
+### Step 9 — Run dbt
+
+```bash
+cd dbt/
+dbt deps
+dbt run
+dbt test
+dbt docs generate
+dbt docs serve
+```
+
+---
+
+### Step 10 — Run the Dashboard Locally
+
+
+
+Create a `dashboard/.streamlit/secrets.toml` file locally (do not commit this file):
+
+```toml
+DATABASE_URL = "postgresql://app_user:your_password@your-rds-endpoint:5432/etldb"
+```
+
+Then run:
+
+```bash
+streamlit run dashboard/app.py
 ```
 
 ---
