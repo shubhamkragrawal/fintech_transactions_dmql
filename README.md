@@ -324,6 +324,11 @@ Full implementation in `sql/security.sql`.
 - Account type breakdown (filter widget)
 - Date range selector (slider widget)
 
+  
+<img width="1661" height="885" alt="Screenshot 2026-05-15 at 13 34 06" src="https://github.com/user-attachments/assets/4dc4b221-c543-4139-ac1c-a2cf902eb3d1" />
+
+<img width="1646" height="916" alt="Screenshot 2026-05-15 at 13 34 21" src="https://github.com/user-attachments/assets/e2090866-852b-4c3e-9a9f-4f3172217c1a" />
+
 ---
 
 ## Dataset
@@ -357,5 +362,6 @@ Full implementation in `sql/security.sql`.
 | Kavyansh Tiwari | Glue ETL, RDS Setup, Streamlit Dashboard |
 
 ---
+
 
 *EAS 550 · University at Buffalo · Spring 2026*
